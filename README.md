@@ -41,13 +41,22 @@ This is a simple ASP.NET Core MVC application that provides user registration, l
 3. **Update SMTP settings**:
     - Add your SMTP credentials in the `appsettings.json` under `SmtpSettings`:
     ```json
-    "SmtpSettings": {
-        "Server": "smtp.yourserver.com",
+    {
+      "Logging": {
+        "LogLevel": {
+          "Default": "Information",
+          "Microsoft.AspNetCore": "Warning"
+        }
+      },
+      "AllowedHosts": "*",
+      "SmtpSettings": {
+        "Server": "smtp.gmail.com",
         "Port": 587,
-        "SenderName": "Your Name",
-        "SenderEmail": "youremail@domain.com",
-        "Password": "yourpassword",
+        "SenderName": "ADD-YOUR-EMAIL",
+        "SenderEmail": "ADD-YOUR-EMAIL",
+        "Password": "ADD-YOUR-APP-PASSWORD",
         "UseSsl": true
+      }
     }
     ```
 
@@ -76,7 +85,3 @@ This is a simple ASP.NET Core MVC application that provides user registration, l
 - 🖼 `Views/`: Contains the Razor views for rendering HTML pages.
 - 📧 `MailServices/`: Includes the `IMailService` interface and `MailService` class for sending emails.
 - 🗃 `Data/`: Holds the `AppDbContext` for database interactions.
-
----
-
-Thank you for checking out this project! 🚀 Happy coding! 👨‍💻👩‍💻
